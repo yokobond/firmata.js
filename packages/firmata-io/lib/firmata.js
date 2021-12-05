@@ -1,7 +1,7 @@
 "use strict";
 
 // Built-in Dependencies
-const Emitter = require("events");
+const {EventEmitter} = require("events");
 
 // Internal Dependencies
 const Encoder7Bit = require("./encoder7bit");
@@ -456,7 +456,7 @@ let Transport = null;
  * @property {SerialPort} sp The serial port object used to communicate with the arduino.
  */
 
-class Firmata extends Emitter {
+class Firmata extends EventEmitter {
   constructor(port, options, callback) {
     super();
 
